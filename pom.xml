@@ -33,6 +33,13 @@
 		<sonar.coverage.jacoco.xmlReportPaths>
 			${project.basedir}/report-aggregate/target/site/jacoco-aggregate/jacoco.xml
 		</sonar.coverage.jacoco.xmlReportPaths>
+		<javafx.version>23-ea+3</javafx.version>
+		<testfx.version>4.0.18</testfx.version>
+		<monocole.version>21.0.2</monocole.version>
+		<jgraphx.version>4.2.2</jgraphx.version>
+		<antlr.version>4.13.2</antlr.version>
+		<lsp4j.version>0.23.1</lsp4j.version>
+		<richtextfx.version>0.11.3</richtextfx.version>
 	</properties>
 
 	<dependencyManagement>

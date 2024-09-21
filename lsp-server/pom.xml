@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.talaatharb.grammarsmith</groupId>
 	<artifactId>lsp-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>lsp-server</name>
 	<parent>
 		<groupId>net.talaatharb</groupId>
@@ -35,7 +34,17 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>${slf4j-simple.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.eclipse.lsp4j</groupId>
+			<artifactId>org.eclipse.lsp4j</artifactId>
+			<version>${lsp4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr4</artifactId>
+			<version>${antlr.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
