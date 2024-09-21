@@ -13,10 +13,13 @@
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<jackson-datatype-jsr310.version>2.18.0-rc1</jackson-datatype-jsr310.version>
 		<jaxb-api.version>2.4.0-b180830.0359</jaxb-api.version>
-    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+		<slf4j-simple.version>2.1.0-alpha1</slf4j-simple.version>
+		<lombok.version>1.18.34</lombok.version>
+    	<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 		<maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
 		<maven-apache-plugins.version>3.11.0</maven-apache-plugins.version>
 		<maven-testing-plugins.version>3.5.0</maven-testing-plugins.version>
