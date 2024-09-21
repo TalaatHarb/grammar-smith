@@ -17,7 +17,7 @@ public class DiagnosticsController {
     private final DiagnosticsModel diagnosticsModel;
 
     public void requestDiagnostics(String text) {
-        lspClient.requestDiagnostics(text, response -> {
+        lspClient.requestDiagnosticsAsync(text, response -> {
             // Parse diagnostics from response and update model
             List<DiagnosticError> errors = parseDiagnostics(response);
             diagnosticsModel.clearErrors();

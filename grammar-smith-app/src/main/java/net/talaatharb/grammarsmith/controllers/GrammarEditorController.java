@@ -20,7 +20,7 @@ public class GrammarEditorController {
 	public void onTextChanged(String newText) {
 		grammarModel.setGrammarText(newText);
 		// Send request to LSP server for syntax highlighting and diagnostics
-		lspClient.requestDiagnostics(newText, response -> {
+		lspClient.requestDiagnosticsAsync(newText, response -> {
 			// Handle response: update the GrammarModel's errors
 			List<DiagnosticError> errors = parseDiagnostics(response);
 			grammarModel.getErrors().clear();

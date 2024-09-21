@@ -33,7 +33,7 @@ class LspClientTest {
 		when(lspServer.provideSyntaxHighlighting(anyList())).thenReturn(getSampleHighlighting());
 		String grammarText = "if x == 10";
 
-		List<HighlightInfo> highlightInfo = lspClient.requestSyntaxHighlighting(grammarText);
+		List<HighlightInfo> highlightInfo = lspClient.requestSyntaxHighlightingSync(grammarText);
 
 		// Ensure highlight info is received correctly
 		assertNotNull(highlightInfo);
@@ -45,7 +45,7 @@ class LspClientTest {
 		// Simulate receiving diagnostics from the server
 		when(lspServer.provideDiagnostics(any())).thenReturn(getSampleDiagnostics());
 
-		List<Diagnostic> diagnostics = lspClient.requestDiagnostics("if x == 10");
+		List<Diagnostic> diagnostics = lspClient.requestDiagnosticsSync("if x == 10");
 
 		// Ensure diagnostics are received correctly
 		assertNotNull(diagnostics);

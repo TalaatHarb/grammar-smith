@@ -13,7 +13,7 @@ public class ASTController {
 
 	public void requestAST(String inputCode) {
 		// Send request to LSP server to get AST
-		lspClient.requestAST(inputCode, response -> {
+		lspClient.requestASTAsync(inputCode, response -> {
 			// Handle response: update ASTModel with the new AST
 			ASTNode rootNode = null;
 			astModel.setRoot(rootNode);
@@ -23,7 +23,7 @@ public class ASTController {
 
 	public void requestLLVMConversion(String inputCode) {
 		// Convert AST to LLVM IR
-		lspClient.requestLLVMIR(inputCode, response -> {
+		lspClient.requestLLVMIRAsync(inputCode, response -> {
 			// Handle response: store LLVM IR in the ASTModel
 			// Notify view to update the LLVM IR display
 		});

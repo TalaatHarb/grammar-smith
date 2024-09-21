@@ -12,7 +12,7 @@ public class ParseTreeController {
 
     public void onInputCodeChanged(String inputCode) {
         // Send a request to the LSP server to generate the parse tree
-        lspClient.requestParseTree(inputCode, response -> {
+        lspClient.requestParseTreeAsync(inputCode, response -> {
             parseTreeModel.setRoot(response);
             // Notify view to update the parse tree visualization
         });

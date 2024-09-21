@@ -15,30 +15,30 @@ public class LspClient {
 	
 	private final LspServer lspServer;
 
-	public List<HighlightInfo> requestSyntaxHighlighting(String text) {
+	public List<HighlightInfo> requestSyntaxHighlightingSync(String text) {
 		var tokens = lspServer.provideTokens(text);
 		return lspServer.provideSyntaxHighlighting(tokens);
 	}
 
-	public List<Diagnostic> requestDiagnostics(String text) {
+	public List<Diagnostic> requestDiagnosticsSync(String text) {
 		var tokens = lspServer.provideTokens(text);
 		return lspServer.provideDiagnostics(lspServer.provideParseTree(tokens));
 	}
 	
-	public void requestDiagnostics(String text, Consumer<List<Diagnostic>> callback) {
+	public void requestDiagnosticsAsync(String text, Consumer<List<Diagnostic>> callback) {
         // Send a request to the LSP server for diagnostics
         // Once the response is received, call the callback with the response
     }
 	
-	public void requestParseTree(String text, Consumer<ParseTree> callback) {
+	public void requestParseTreeAsync(String text, Consumer<ParseTree> callback) {
 		// Send a request to the LSP server for parse tree
 	}
 	
-	public void requestAST(String text, Consumer<Object> callback) {
+	public void requestASTAsync(String text, Consumer<Object> callback) {
 		// Send a request to the LSP server for parse tree
 	}
 	
-	public void requestLLVMIR(String text, Consumer<String> callback) {
+	public void requestLLVMIRAsync(String text, Consumer<String> callback) {
 		// Send a request to the LSP server for parse tree
 	}
 
