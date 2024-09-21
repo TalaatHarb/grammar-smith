@@ -29,6 +29,8 @@
 		<minimum-coverage-ratio>0.8</minimum-coverage-ratio>
 		<pitest.version>1.9.5</pitest.version>
 		<pitest-junit5-plugin.version>1.0.0</pitest-junit5-plugin.version>
+		<junit.version>5.9.1</junit.version>
+		<junit.platform.version>1.11.0</junit.platform.version>
 		<jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
 		<sonar.coverage.jacoco.xmlReportPaths>
 			${project.basedir}/report-aggregate/target/site/jacoco-aggregate/jacoco.xml
@@ -40,6 +42,7 @@
 		<antlr.version>4.13.2</antlr.version>
 		<lsp4j.version>0.23.1</lsp4j.version>
 		<richtextfx.version>0.11.3</richtextfx.version>
+		<mockito.version>5.12.0</mockito.version>
 	</properties>
 
 	<dependencyManagement>
