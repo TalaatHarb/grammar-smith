@@ -5,7 +5,7 @@
 	<groupId>net.talaatharb.grammarsmith</groupId>
 	<artifactId>lsp-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cb-explainer</name>
+	<name>lsp-server</name>
 	<parent>
 		<groupId>net.talaatharb</groupId>
 		<artifactId>grammar-smith</artifactId>
