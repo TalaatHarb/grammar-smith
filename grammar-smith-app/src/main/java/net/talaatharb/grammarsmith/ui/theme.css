@@ -1,0 +1,53 @@
+.keyword {
+    -fx-fill: purple;
+    fill: purple;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+.semicolon {
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+.paren {
+    -fx-fill: firebrick;
+    fill: firebrick;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+.bracket {
+    -fx-fill: darkgreen;
+    fill: darkgreen;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+.brace {
+    -fx-fill: teal;
+    fill: teal;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+.literal {
+    -fx-fill: blue;
+    fill: blue;
+}
+
+.comment {
+	-fx-fill: cadetblue;
+	fill: cadetblue;
+}
+
+.tagmark {
+    -fx-fill: gray;
+    fill: gray;
+}
+
+.anytag {
+    -fx-fill: crimson;
+    fill: crimson;
+}
+
+.attribute , .variable {
+    -fx-fill: darkviolet;
+    fill: darkviolet;
+}
+
