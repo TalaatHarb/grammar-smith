@@ -19,6 +19,18 @@ The project is organized into a **multi-module Maven** structure with the follow
 - **lsp-client**: The LSP client that interacts with the server and forwards requests from the UI.
 - **grammar-smith-app**: The JavaFX-based GUI that provides the visual and interactive interface for users.
 
+```mermaid
+graph TD;
+    A[grammar-smith]
+    A --> B[lsp-server]
+    A --> C[lsp-client]
+    A --> D[grammar-smith-app]
+    
+    C -->|depends on| B
+    D -->|depends on| C
+
+```
+
 ### Key Components
 
 1. **Grammar Rule Editor**:
@@ -44,6 +56,21 @@ To maximize learning and modularity, the application follows an **LSP-based** ar
 
 Each UI action (e.g., grammar editing, code input) communicates with the LSP client, which forwards requests to the LSP server. The server responds asynchronously, allowing the application to update the UI based on the latest syntax analysis, parse trees, and diagnostics.
 
+```mermaid
+sequenceDiagram
+    participant User
+    participant MainApp as Grammar Smith App
+    participant LSPClient as LSP Client
+    participant LSPServer as LSP Server
+
+    User->>MainApp: Input grammar rules
+    MainApp->>LSPClient: Send grammar rules
+    LSPClient->>LSPServer: Process grammar rules
+    LSPServer->>LSPClient: Return diagnostics
+    LSPClient->>MainApp: Update UI with diagnostics
+    MainApp->>User: Show results
+```
+
 ### Controllers
 
 Each controller in the JavaFX application is responsible for managing specific parts of the communication between the UI and the LSP client:
@@ -52,6 +79,22 @@ Each controller in the JavaFX application is responsible for managing specific p
 2. **ParseTreeController**: Handles requests for parsing input and visualizing parse trees.
 3. **DiagnosticsController**: Manages diagnostics such as syntax errors and warnings, and updates the UI accordingly.
 4. **ASTController**: Oversees AST generation and conversion to LLVM IR.
+
+```mermaid
+graph TD;
+    A[Main Window] --> B[Grammar Rule Editor]
+    A --> C[Parse Tree / AST Visualization]
+    A --> D[AST to LLVM IR Translator]
+    A --> E[Project Management]
+    A --> F[Diagnostics Panel]
+    A --> G[Main Menu]
+    B --> |Input Code| C;
+    C --> |AST| D;
+    E --> B;
+    E --> C;
+    E --> D;
+    G --> A;
+```
 
 ### Testing
 
