@@ -1,0 +1,25 @@
+name: Build project
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - lsp-server/**
+      - lsp-client/**
+      - grammar-smith-app/**
+      - pom.xml
+      - .github/workflows/project-build.yml
+
+jobs:
+  build-project:
+    name: Build project
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with maven
+        run: mvn clean compile package
