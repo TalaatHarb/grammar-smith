@@ -14,12 +14,9 @@ jobs:
     name: Build project
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Build with maven
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: maven
-        run: mvn -v && mvn clean compile package
+      - run: mvn compile verify package
